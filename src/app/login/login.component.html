@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+    <div mat-dialog-content>
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="userName">
+            <mat-error *ngIf="loginForm.get('userName')?.hasError('email') && !loginForm.get('userName')?.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+            <mat-error *ngIf="loginForm.get('userName')?.hasError('required')">
+                User Name <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                Password <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button (click)="onCloseClick()">Close</button>
+        <button mat-button type="submit" cdkFocusInitial (submit)="doLogin()">Submit</button>
+      </div>
+</form>

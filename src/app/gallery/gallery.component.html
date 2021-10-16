@@ -1,0 +1,8 @@
+<div class="container-lg">
+    <div class="row pb-5">
+        <div class="col-sm-3 py-3" *ngFor="let galleryPhoto of galleryService.galleryImages">
+            <p>{{galleryPhoto.name}}</p>
+            <img class="photo-result-image" [src]="galleryPhoto.url" [alt]="galleryPhoto.name">
+        </div>
+    </div>
+</div>

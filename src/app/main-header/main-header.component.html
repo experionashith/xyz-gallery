@@ -1,0 +1,15 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>XYZ Gallery</span>
+    <span class="example-spacer"></span>
+    <div >
+      <a class="mx-2 link-text" routerLink="">Home</a>
+      <a *ngIf="userService.isLoggedIn" class="mx-2 link-text" routerLink="gallery">Gallery</a>
+      <a class="mx-2 link-text" routerLink="about">About</a>
+      <span *ngIf="userService.isLoggedIn" class="mx-2">Hi {{userService.logedInUserDetails.username}}</span>
+      <button *ngIf="!userService.isLoggedIn" class="mx-2" (click)="openSignInModal()" mat-raised-button>Sign In</button>
+      <button *ngIf="userService.isLoggedIn" class="mx-2" (click)="signOut()" mat-raised-button>Sign Out</button>
+    </div>
+  </mat-toolbar>
+</p>
+  
