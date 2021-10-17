@@ -20,11 +20,6 @@ export class MainHeaderComponent implements OnInit {
       width: '300px',
       data: {name: 'achu', animal: 'madan'}
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
   }
 
   signOut() {

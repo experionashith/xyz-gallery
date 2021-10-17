@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -46,7 +47,11 @@ export class GalleryService {
   isPrivate: true
 },
 ]
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+  getGalleryImages() {
+    return this.httpClient.get('assets/json/gallery.json')
+  }
 }
 
 

@@ -18,6 +18,8 @@ import { AboutComponent } from './about/about.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { MentionModule } from 'angular-mentions';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -41,9 +43,10 @@ import { MentionModule } from 'angular-mentions';
     MatExpansionModule,
     AppRoutingModule,
     MatDialogModule,
-    MentionModule
+    MentionModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

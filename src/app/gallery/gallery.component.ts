@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { GalleryService } from '../gallery.service';
 
 @Component({
@@ -7,10 +8,13 @@ import { GalleryService } from '../gallery.service';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
+  gallery$: Observable<any>;
   constructor(public galleryService: GalleryService) { }
 
   ngOnInit(): void {
+    this.gallery$ = this.galleryService.getGalleryImages();
   }
+
+
 
 }

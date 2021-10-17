@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GalleryService } from '../gallery.service';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,9 +10,11 @@ import { UserService } from '../user.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  gallery$: Observable<any>;
+  constructor(public galleryService: GalleryService, public userService: UserService) { }
 
   ngOnInit(): void {
+    this.gallery$ = this.galleryService.getGalleryImages();
   }
 
 }
