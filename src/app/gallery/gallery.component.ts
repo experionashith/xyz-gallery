@@ -9,10 +9,16 @@ import { GalleryService } from '../gallery.service';
 })
 export class GalleryComponent implements OnInit {
   gallery$: Observable<any>;
+  totalAngularPackages: any;
   constructor(public galleryService: GalleryService) { }
 
   ngOnInit(): void {
     this.gallery$ = this.galleryService.getGalleryImages();
+
+    this.galleryService.sampleGetCall().subscribe(data => {
+      this.totalAngularPackages = data;
+      console.log(data);
+  })
   }
 
 

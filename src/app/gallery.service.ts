@@ -52,6 +52,10 @@ export class GalleryService {
   getGalleryImages() {
     return this.httpClient.get('assets/json/gallery.json')
   }
+
+  sampleGetCall() {
+    return this.httpClient.get<any>('https://api.npms.io/v2/search?q=scope:angular');
+  }
 }
 
 
