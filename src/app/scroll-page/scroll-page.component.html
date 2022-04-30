@@ -1,0 +1,12 @@
+<!-- <p>scroll-page works!</p> -->
+<!-- <div id="notifications-list"  (scroll)="scrollHandler($event)"  *ngIf="data">
+    <div class="row notification-row" *ngFor = "let notification of data.response.docs" > 
+             {{notification.abstract}}
+    </div> -->
+    <button (click)="buttonClicked()">Click Me</button>
+ <!-- </div> -->
+
+ <div *ngIf="dispalyPopup">
+     <p>Button Clicked</p> 
+     <button (click)="closePopup()">X</button>
+ </div>

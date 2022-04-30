@@ -5,6 +5,7 @@
     <div >
       <a class="mx-2 link-text" routerLink="">Home</a>
       <a *ngIf="userService.isLoggedIn" class="mx-2 link-text" routerLink="gallery">Gallery</a>
+      <a class="mx-2 link-text" routerLink="scroll">Scroll</a>
       <a class="mx-2 link-text" routerLink="about">About</a>
       <span *ngIf="userService.isLoggedIn" class="mx-2">Hi {{userService.logedInUserDetails.username}}</span>
       <button *ngIf="!userService.isLoggedIn" class="mx-2" (click)="openSignInModal()" mat-raised-button>Sign In</button>

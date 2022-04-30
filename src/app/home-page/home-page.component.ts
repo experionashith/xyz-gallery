@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.gallery$ = this.galleryService.getGalleryImages();
+    this.userService.callSampleApi();
   }
 
 }

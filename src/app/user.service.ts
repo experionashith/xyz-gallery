@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse, User } from './user.model';
 
@@ -9,7 +10,7 @@ export class UserService {
   logedInUserDetails: User = {userid: '', password: '', username: ''};
   isLoggedIn = false;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   login(enteredDetails: {userName: string, password: string}): LoginResponse  {
     this.clearUserSession();
@@ -27,6 +28,16 @@ export class UserService {
     } else {
       return {loginSuccess: false, message: 'Please Enter Correct User Name and Password'};
     } 
+  }
+
+  callSampleApi() {
+    this.httpClient.get('https://api.plos.org/search?q=title:DNA').subscribe((data) => {
+      console.log(data);
+    })
+  }
+
+  callSampleApiObs() {
+    return this.httpClient.get('https://api.plos.org/search?q=title:DNA');
   }
 
   clearUserSession() {

@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { MentionModule } from 'angular-mentions';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './auth-guard.service';
+import { ScrollPageComponent } from './scroll-page/scroll-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthGuardService } from './auth-guard.service';
     HomePageComponent,
     GalleryComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    ScrollPageComponent
   ],
   imports: [
     BrowserModule,
